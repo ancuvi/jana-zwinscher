@@ -13,6 +13,11 @@ export const site = {
   whatsappNumber: '4900000000000',      // E.164 ohne +
   email: 'kontakt@jana-zwinscher.de',
 
+  // Adressen
+  officeAddress: 'Steinweg 1, Mittweida',
+  hqAddress: 'Lichtenau',
+  state: 'Sachsen',
+
   callbackFrom: '16:00 Uhr',
   serviceRegion: [
     'Mittweida',

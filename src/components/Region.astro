@@ -13,12 +13,14 @@ import { site } from '../site.config';
   <div class="region-layout">
     <div class="region-text reveal">
       <p>
-        Mein Stützpunkt ist {site.location}. Von dort komme ich in einem Umkreis von {site.radiusKm} km zu Ihnen —
-        ohne Aufpreis, ohne Anfahrtskosten-Schock. Frankenberg, Auerswalde und Chemnitz gehören zu meinem täglichen
-        Einzugsgebiet.
+        Mein Büro ist im <strong>{site.officeAddress}</strong>, der Firmensitz in <strong>{site.hqAddress}</strong>.
+        Von dort komme ich in einem Umkreis von {site.radiusKm} km zu Ihnen — ohne Aufpreis, ohne
+        Anfahrtskosten-Schock. Frankenberg, Auerswalde und Chemnitz gehören zu meinem täglichen Einzugsgebiet.
       </p>
       <p style="color: color-mix(in oklab, var(--bg) 60%, transparent); font-size:.95rem;">
-        Sie sind sich unsicher, ob Ihr Ort dabei ist? Eine kurze Nachricht reicht — ich antworte am selben Tag.
+        Eine <em class="serif" style="color:var(--accent-soft); font-style:italic">kostenlose Besichtigung</em>
+        biete ich in ganz {site.state} an. Sie sind sich unsicher, ob Ihr Ort dabei ist? Eine kurze Nachricht
+        reicht — ich antworte am selben Tag.
       </p>
 
       <div class="city-list">
