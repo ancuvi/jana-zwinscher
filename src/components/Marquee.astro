@@ -1,0 +1,23 @@
+---
+const items: Array<{ text: string; italic?: boolean }> = [
+  { text: 'Entrümpelung', italic: true },
+  { text: 'Haushaltsauflösung' },
+  { text: 'Transporte', italic: true },
+  { text: 'Endreinigung' },
+  { text: 'Besenrein übergeben', italic: true },
+  { text: 'Mittweida' },
+];
+// für nahtlosen Loop verdoppeln
+const track = [...items, ...items];
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {track.map((it) => (
+      <span class="marquee-item">
+        {it.italic ? <em>{it.text}</em> : <span>{it.text}</span>}
+        <span class="dot"></span>
+      </span>
+    ))}
+  </div>
+</div>

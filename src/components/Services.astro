@@ -1,0 +1,69 @@
+---
+const services = [
+  {
+    num: '01',
+    label: 'Entrümpelung',
+    titleStart: 'Wohnungen ',
+    titleEm: 'schnell',
+    titleEnd: ' & restlos geräumt',
+    text:
+      'Vom Keller bis zum Dachboden, vom Einzelraum bis zur ganzen Wohnung. Saubere Demontage, fachgerechte Entsorgung, kurze Termine.',
+    icon: `<svg viewBox="0 0 56 56"><rect x="8" y="14" width="40" height="34" rx="2"/><path d="M8 22h40M16 14V8M40 14V8M18 30h6M18 38h12"/></svg>`,
+  },
+  {
+    num: '02',
+    label: 'Haushaltsauflösung',
+    titleStart: 'Mit ',
+    titleEm: 'Respekt',
+    titleEnd: ' und Diskretion aufgelöst',
+    text:
+      'Auch in schweren Momenten: ich nehme Rücksicht, hebe Wertvolles zur Seite, sortiere und entsorge — Sie behalten den Überblick.',
+    icon: `<svg viewBox="0 0 56 56"><path d="M10 46V20l18-12 18 12v26"/><path d="M22 46V30h12v16M10 46h36"/></svg>`,
+  },
+  {
+    num: '03',
+    label: 'Transporte',
+    titleStart: 'Möbel & Umzüge — ',
+    titleEm: 'zuverlässig',
+    titleEnd: ' bewegt',
+    text:
+      'Vom Einzelstück bis zum kompletten Umzug. Pünktlich, sorgfältig verpackt, sicher angekommen — auch über die Stadtgrenze hinaus.',
+    icon: `<svg viewBox="0 0 56 56"><path d="M4 36V18h28v18M32 24h12l8 8v4H4M12 36a4 4 0 1 0 8 0 4 4 0 1 0-8 0M40 36a4 4 0 1 0 8 0 4 4 0 1 0-8 0"/></svg>`,
+  },
+  {
+    num: '04',
+    label: 'Endreinigung',
+    titleStart: 'Übergabe — ',
+    titleEm: 'besenrein',
+    titleEnd: ' oder feinst geputzt',
+    text:
+      'Hier kommt mein Fach-Knowhow aus dem Gebäudemanagement ins Spiel. Vermieter zufriedenstellen, Kaution sichern, sauber raus.',
+    icon: `<svg viewBox="0 0 56 56"><path d="M14 46V22l8-10h12l8 10v24z"/><path d="M22 22v8h12v-8M22 38h12"/></svg>`,
+  },
+];
+---
+
+<section id="leistungen" class="services">
+  <div class="section-header">
+    <div class="section-num mono reveal"><span class="num">01</span> Was ich für Sie tue</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Vier Hände, die <span class="it">anpacken</span> — und alles besenrein hinterlassen.
+    </h2>
+  </div>
+
+  <div class="service-grid">
+    {services.map((s, i) => (
+      <article class={`service reveal reveal-delay-${i}`}>
+        <div class="icon" aria-hidden="true" set:html={s.icon}></div>
+        <div>
+          <span class="num mono"><span class="dot">●</span> {s.num} — {s.label}</span>
+          <h3>{s.titleStart}<em>{s.titleEm}</em>{s.titleEnd}</h3>
+          <p>{s.text}</p>
+        </div>
+        <div class="arrow-go" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

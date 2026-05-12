@@ -1,0 +1,72 @@
+---
+import { site } from '../site.config';
+---
+
+<section id="region" class="region">
+  <div class="section-header">
+    <div class="section-num mono reveal"><span class="num">03</span> Einzugsgebiet</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      {site.location} und <span class="it">{site.radiusKm} km</span> drumherum — Sie liegen mit Sicherheit drin.
+    </h2>
+  </div>
+
+  <div class="region-layout">
+    <div class="region-text reveal">
+      <p>
+        Mein Stützpunkt ist {site.location}. Von dort komme ich in einem Umkreis von {site.radiusKm} km zu Ihnen —
+        ohne Aufpreis, ohne Anfahrtskosten-Schock. Frankenberg, Auerswalde und Chemnitz gehören zu meinem täglichen
+        Einzugsgebiet.
+      </p>
+      <p style="color: color-mix(in oklab, var(--bg) 60%, transparent); font-size:.95rem;">
+        Sie sind sich unsicher, ob Ihr Ort dabei ist? Eine kurze Nachricht reicht — ich antworte am selben Tag.
+      </p>
+
+      <div class="city-list">
+        {site.serviceRegion.map((city, i) => (
+          <span class={i === 0 ? 'city-chip primary' : 'city-chip'}>{city}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="map-wrap reveal reveal-delay-1">
+      <svg viewBox="0 0 400 400" id="mapSvg">
+        <circle class="map-ring" cx="200" cy="200" r="60" />
+        <circle class="map-ring" cx="200" cy="200" r="110" />
+        <circle class="map-ring" cx="200" cy="200" r="160" />
+
+        <text x="200" y="58" text-anchor="middle" class="map-radius-label">─── 50 KM ───</text>
+
+        <g>
+          <circle class="map-pulse" cx="200" cy="200" r="10" />
+          <circle class="map-pulse" cx="200" cy="200" r="10" style="animation-delay: 1s" />
+          <circle class="map-center" cx="200" cy="200" r="7" />
+          <text x="212" y="204" class="map-city-label" style="font-weight:700">MITTWEIDA</text>
+
+          <circle class="map-city-dot" cx="148" cy="252" r="3.5" />
+          <text x="84" y="256" class="map-city-label">CHEMNITZ ─</text>
+
+          <circle class="map-city-dot" cx="245" cy="245" r="3.5" />
+          <text x="252" y="249" class="map-city-label">FRANKENBERG</text>
+
+          <circle class="map-city-dot" cx="190" cy="262" r="3.5" />
+          <text x="115" y="278" class="map-city-label">AUERSWALDE ─</text>
+
+          <circle class="map-city-dot" cx="276" cy="208" r="3.5" />
+          <text x="284" y="212" class="map-city-label">HAINICHEN</text>
+
+          <circle class="map-city-dot" cx="138" cy="190" r="3.5" />
+          <text x="56" y="194" class="map-city-label">─ BURGSTÄDT</text>
+
+          <circle class="map-city-dot" cx="135" cy="142" r="3.5" />
+          <text x="58" y="146" class="map-city-label">─ ROCHLITZ</text>
+
+          <circle class="map-city-dot" cx="262" cy="148" r="3.5" />
+          <text x="270" y="152" class="map-city-label">WALDHEIM</text>
+
+          <circle class="map-city-dot" cx="208" cy="118" r="3.5" />
+          <text x="216" y="122" class="map-city-label">HARTHA</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>

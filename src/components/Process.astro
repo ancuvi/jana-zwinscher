@@ -1,0 +1,26 @@
+---
+const steps = [
+  { title: 'Anfrage', text: 'Telefon, WhatsApp oder Formular — kurz beschreiben, was ansteht. Antwort am selben Tag.' },
+  { title: 'Besichtigung', text: 'Kostenlos und unverbindlich vor Ort. Wir gehen gemeinsam durch und ich kalkuliere Festpreis.' },
+  { title: 'Termin', text: 'Sie geben den Tag vor — ich komme pünktlich mit allem Werkzeug. Auch kurzfristig möglich.' },
+  { title: 'Übergabe', text: 'Sauber, leer, fotodokumentiert. Sie unterschreiben — fertig.' },
+];
+---
+
+<section id="ablauf" class="process">
+  <div class="section-header">
+    <div class="section-num mono reveal"><span class="num">04</span> So einfach geht's</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Vier Schritte vom Anruf bis zum <span class="it">leeren Raum</span>.
+    </h2>
+  </div>
+
+  <div class="steps">
+    {steps.map((s, i) => (
+      <div class={`step reveal reveal-delay-${i}`}>
+        <h4>{s.title}</h4>
+        <p>{s.text}</p>
+      </div>
+    ))}
+  </div>
+</section>

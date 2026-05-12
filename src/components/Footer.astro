@@ -1,0 +1,32 @@
+---
+import { site, links } from '../site.config';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">{site.name}</div>
+      <p>Entrümpelung · Haushaltsauflösung · Transporte · Endreinigung im Raum {site.location} + {site.radiusKm} km.</p>
+    </div>
+    <div>
+      <h5>Kontakt</h5>
+      <a href={links.tel}>{site.phoneDisplay}</a>
+      <a href={links.whatsapp} rel="noopener" target="_blank">WhatsApp</a>
+      <a href={links.mail}>{site.email}</a>
+      <p>Rückruf täglich ab {site.callbackFrom}</p>
+    </div>
+    <div>
+      <h5>Service-Region</h5>
+      <p>{site.serviceRegion.slice(0, 9).join(', ')} — und alles im Umkreis von {site.radiusKm} km.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {year} {site.name} · Nebengewerbe</span>
+    <span>
+      <a href="/impressum" style="color:inherit; text-decoration:none; margin-right:1rem;">Impressum</a>
+      <a href="/datenschutz" style="color:inherit; text-decoration:none;">Datenschutz</a>
+    </span>
+  </div>
+</footer>
