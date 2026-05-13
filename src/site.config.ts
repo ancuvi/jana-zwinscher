@@ -2,16 +2,16 @@
 // Sobald du Telefon/Email setzt, werden tel:- und mailto:-Links überall aktualisiert.
 
 export const site = {
-  name: 'Jana Zwinscher',
+  name: 'Jana Zwinzscher',
   tagline: 'Entrümpelung · Transporte · Endreinigung',
   location: 'Mittweida',
   radiusKm: 50,
 
-  // TODO: echte Werte eintragen
-  phoneDisplay: '+49 0000 000 000',
-  phoneHref: '+4900000000000',          // ohne Leerzeichen, ohne führende 0
-  whatsappNumber: '4900000000000',      // E.164 ohne +
-  email: 'kontakt@jana-zwinscher.de',
+  // Kontakt
+  phoneDisplay: '0171 6153591',
+  phoneHref: '+491716153591',           // E.164 mit + für tel:-Link
+  whatsappNumber: '491716153591',       // E.164 ohne + für wa.me/-Link
+  email: 'jana_zwinzscher@web.de',
 
   // Adressen
   officeAddress: 'Steinweg 1, Mittweida',

@@ -1,6 +1,6 @@
-# Jana Zwinscher — One-Pager
+# Jana Zwinzscher — One-Pager
 
-Statische One-Pager-Website für **Jana Zwinscher** (Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida + 50 km). Gebaut mit [Astro](https://astro.build) — der Build erzeugt reines HTML/CSS/JS ohne Framework-Runtime, damit die Seite überall blitzschnell lädt.
+Statische One-Pager-Website für **Jana Zwinzscher** (Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida + 50 km). Gebaut mit [Astro](https://astro.build) — der Build erzeugt reines HTML/CSS/JS ohne Framework-Runtime, damit die Seite überall blitzschnell lädt.
 
 ---
 
@@ -22,10 +22,10 @@ Empfohlen: **Node.js 20 oder neuer**.
 Alle Kontaktdaten und das Einzugsgebiet stehen zentral in [`src/site.config.ts`](src/site.config.ts) — die Werte werden automatisch in Nav, Hero, Kontaktsektion und Footer eingesetzt.
 
 ```ts
-phoneDisplay: '+49 0000 000 000',   // Anzeige
-phoneHref:    '+4900000000000',     // ohne Leerzeichen, für tel:-Link
-whatsappNumber: '4900000000000',    // E.164 ohne +, für wa.me/-Link
-email:        'kontakt@jana-zwinscher.de',
+phoneDisplay: '0171 6153591',       // Anzeige
+phoneHref:    '+491716153591',      // E.164 mit + für tel:-Link
+whatsappNumber: '491716153591',     // E.164 ohne + für wa.me/-Link
+email:        'jana_zwinzscher@web.de',
 ```
 
 Außerdem:
@@ -78,4 +78,4 @@ Erste Ladegröße: ~48 KB (HTML+CSS+JS) plus die Google-Fonts.
 
 ## Lizenz
 
-Inhalte © Jana Zwinscher. Code unter Ihrer eigenen Lizenz veröffentlichen, falls Sie das Repo öffentlich machen.
+Inhalte © Jana Zwinzscher. Code unter Ihrer eigenen Lizenz veröffentlichen, falls Sie das Repo öffentlich machen.
