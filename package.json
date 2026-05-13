@@ -1,9 +1,9 @@
 {
-  "name": "jana-zwinzscher",
+  "name": "jana-zwinscher",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "One-Pager-Website für Jana Zwinzscher — Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida.",
+  "description": "One-Pager-Website für Jana Zwinscher — Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
