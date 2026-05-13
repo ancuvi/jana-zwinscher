@@ -91,9 +91,83 @@ function initCursorGlow() {
   });
 }
 
+function initBroomCursor() {
+  const broom = document.getElementById('cursorBroom');
+  if (!broom) return;
+
+  const fineHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fineHover || reduceMotion) return;
+
+  let rafId: number | null = null;
+  let mouseX = -100, mouseY = -100;
+
+  const tick = () => {
+    broom.style.left = mouseX + 'px';
+    broom.style.top = mouseY + 'px';
+    rafId = null;
+  };
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!broom.classList.contains('ready')) broom.classList.add('ready');
+    if (rafId === null) rafId = requestAnimationFrame(tick);
+  });
+
+  document.addEventListener('mouseleave', () => broom.classList.remove('ready'));
+  document.addEventListener('mouseenter', () => broom.classList.add('ready'));
+
+  const isInteractive = (el: Element | null): boolean => {
+    if (!el) return false;
+    return !!el.closest('a, button, [role="button"], .btn, [data-interactive]');
+  };
+
+  document.addEventListener('mouseover', (e) => {
+    if (isInteractive(e.target as Element)) broom.classList.add('hover');
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (isInteractive(e.target as Element)) broom.classList.remove('hover');
+  });
+
+  const spawnDust = (x: number, y: number) => {
+    // Offset to where the bristles end up after the handle-tip alignment + -32deg rotation.
+    const bx = x + 17;
+    const by = y + 27;
+    const count = 7;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'dust-particle';
+      p.style.left = bx + 'px';
+      p.style.top = by + 'px';
+      const angle = (-Math.PI / 2) + (Math.random() - 0.5) * Math.PI * 0.9;
+      const dist = 35 + Math.random() * 40;
+      const dx = Math.cos(angle) * dist;
+      const dy = Math.sin(angle) * dist - 10;
+      p.style.setProperty('--dx', dx.toFixed(1) + 'px');
+      p.style.setProperty('--dy', dy.toFixed(1) + 'px');
+      const size = 6 + Math.random() * 8;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.animationDuration = (550 + Math.random() * 350) + 'ms';
+      document.body.appendChild(p);
+      p.addEventListener('animationend', () => p.remove(), { once: true });
+    }
+  };
+
+  document.addEventListener('mousedown', (e) => {
+    broom.classList.remove('sweeping');
+    void (broom as HTMLElement).offsetWidth;
+    broom.classList.add('sweeping');
+    spawnDust(e.clientX, e.clientY);
+  });
+  broom.addEventListener('animationend', () => broom.classList.remove('sweeping'));
+}
+
 renderHeroTitle(HEADLINE);
 initScrollProgress();
 initReveals();
 initCursorGlow();
+initBroomCursor();
 
 export {};
