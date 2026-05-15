@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
+// GitHub-Pages-Preview-Setup. Für die finale Netlify-Domain einfach
+// `site` auf https://jana-zwinzscher.de setzen und `base` löschen.
 export default defineConfig({
-  // Bitte später durch die echte Domain ersetzen (wirkt sich auf Sitemap & OG-Tags aus)
-  site: 'https://jana-zwinzscher.de',
+  site: 'https://ancuvi.github.io',
+  base: '/jana-zwinscher/',
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',

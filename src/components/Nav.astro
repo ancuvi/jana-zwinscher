@@ -1,16 +1,11 @@
 ---
 import { site } from '../site.config';
+const base = import.meta.env.BASE_URL;
 ---
 
 <nav class="top" id="topnav">
   <a href="#top" class="brand" aria-label={`${site.name} — Startseite`}>
-    <span class="mark" aria-hidden="true">
-      <svg viewBox="74 -2 165 160" xmlns="http://www.w3.org/2000/svg">
-        <path fill="var(--accent)" d="M76.13 0 L92.39 39.94 L122.85 39.92 L106.60 0 Z"/>
-        <path fill="currentColor" d="M142.84 0 L222.99 32.14 L174.91 90.28 L222.99 155.81 L102.86 155.81 L89.78 123.67 L137.85 65.53 L114.11 0 Z"/>
-        <path fill="var(--accent)" d="M189.92 115.89 L206.16 155.81 L236.64 155.81 L220.38 115.87 Z"/>
-      </svg>
-    </span>
+    <img class="mark" src={`${base}images/logo-mark.svg?v=2`} alt="" width="34" height="34" />
     <span class="brand-name">{site.name} <span class="sub">— {site.location}</span></span>
   </a>
   <div class="nav-links">

@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 :root,
 [data-palette="brand"] {
   /* Brand palette derived from the Z-mark logo:
@@ -33,7 +35,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   background: var(--bg);
@@ -42,7 +44,7 @@ body {
   font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: -0.01em; }
@@ -63,13 +65,10 @@ nav.top.scrolled { border-bottom-color: var(--line); padding-top: .7rem; padding
 
 .brand { display: flex; align-items: center; gap: .65rem; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
 .brand .mark {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; flex-shrink: 0;
-  color: var(--brand);
-  transition: transform .4s cubic-bezier(.6,.05,.2,1), color .3s;
+  display: block; width: 34px; height: 34px; flex-shrink: 0;
+  transition: transform .4s cubic-bezier(.6,.05,.2,1);
 }
-.brand .mark svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.brand:hover .mark { transform: rotate(-6deg) scale(1.08); color: var(--brand-soft); }
+.brand:hover .mark { transform: rotate(-6deg) scale(1.08); }
 .brand .sub { color: var(--muted); font-weight: 400; font-size: .85rem; }
 
 .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -102,16 +101,16 @@ nav.top.scrolled { border-bottom-color: var(--line); padding-top: .7rem; padding
 @media (max-width: 760px) {
   .nav-links { display: none; }
   nav.top { padding-left: 1rem; padding-right: 1rem; gap: .75rem; }
-  .brand { font-size: .98rem; gap: .55rem; min-width: 0; }
+  .brand { font-size: .98rem; gap: .55rem; min-width: 0; flex: 1 1 auto; }
   .brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
   .brand .sub { display: none; }
   .nav-cta { padding: .5rem .9rem; font-size: .82rem; flex-shrink: 0; }
   .nav-cta .dot { width: 5px; height: 5px; }
 }
-@media (max-width: 440px) {
-  /* Hide the brand text on very small screens — Z-mark + CTA is enough */
+@media (max-width: 520px) {
+  /* Hide the brand text on phones — Z-mark + CTA is enough */
   .brand-name { display: none; }
-  .nav-cta { padding: .55rem 1rem; font-size: .85rem; }
+  .nav-cta { padding: .5rem 1rem; font-size: .85rem; }
 }
 
 /* ============ HERO ============ */
@@ -213,11 +212,15 @@ h1.hero-title .word > span {
 
 .hero-decoration {
   position: absolute; right: -8%; top: 12%;
-  width: 480px; height: 480px; pointer-events: none;
+  width: min(480px, 80vw); height: min(480px, 80vw); pointer-events: none;
   opacity: .35;
   z-index: -1;
+  max-width: 100%;
 }
 .hero-decoration svg { width: 100%; height: 100%; }
+@media (max-width: 760px) {
+  .hero-decoration { right: -15%; top: auto; bottom: 8%; opacity: .25; }
+}
 .hero-decoration .ring { animation: rotate 60s linear infinite; transform-origin: center; }
 @keyframes rotate { to { transform: rotate(360deg); } }
 

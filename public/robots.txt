@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://jana-zwinzscher.de/sitemap.xml
+# Preview-Deployment auf GitHub Pages. Für die finale Domain wird das
+# beim Netlify-Build wieder auf "Allow: /" umgestellt und ein Sitemap-Hinweis ergänzt.

@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../site.config';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title={`Datenschutzerklärung — ${site.name}`}
+  description="Datenschutzerklärung gemäß DSGVO."
+  noindex={true}
+>
+  <main class="legal-page">
+    <header class="legal-header">
+      <a href={base} class="legal-brand" aria-label={`${site.name} — Startseite`}>
+        <img class="legal-mark" src={`${base}images/logo-mark.svg?v=2`} alt="" width="34" height="34" />
+        <span>{site.name}</span>
+      </a>
+      <a href={base} class="legal-back">← Zurück zur Startseite</a>
+    </header>
+
+    <article class="legal-content">
+      <span class="mono legal-eyebrow">Rechtliches</span>
+      <h1 class="legal-title">Datenschutzerklärung</h1>
+
+      <p class="legal-note">
+        Diese Erklärung deckt das Standard-Setup ab (keine Cookies, kein Tracking, selbst-gehostete Fonts).
+        <strong>[BITTE PRÜFEN: Wenn später Tracking, Analytics, Kontaktformular oder Newsletter hinzukommen,
+        muss dieser Text entsprechend ergänzt werden.]</strong>
+      </p>
+
+      <section>
+        <h2>1. Verantwortlicher</h2>
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der DSGVO ist:
+        </p>
+        <p>
+          {site.name}<br />
+          <span class="todo">[BITTE ERGÄNZEN: vollständige Anschrift wie im Impressum]</span><br />
+          Telefon: <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a><br />
+          E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Hosting & Server-Logs</h2>
+        <p>
+          Diese Website wird bei Netlify (Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco,
+          CA 94104, USA) gehostet. Beim Besuch werden vom Hoster automatisch technische Daten in
+          Server-Log-Dateien erfasst (IP-Adresse, Datum und Uhrzeit des Zugriffs, abgerufene URL,
+          Referer, Browser-Typ und -Version, verwendetes Betriebssystem). Diese Daten sind technisch
+          erforderlich, um die Website auszuliefern und ihre Stabilität sicherzustellen.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen
+          Bereitstellung). Die Daten werden nicht mit anderen Datenquellen zusammengeführt.
+        </p>
+        <p>
+          Mit Netlify besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Da Netlify Server
+          weltweit betreibt, kann eine Übermittlung in Drittländer (insb. USA) erfolgen; die
+          Übermittlung ist durch EU-Standardvertragsklauseln abgesichert.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie uns per Telefon, E-Mail oder WhatsApp kontaktieren, werden Ihre Angaben (Name,
+          Telefonnummer, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage und für den Fall
+          von Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen bzw.
+          Vertragsdurchführung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+          Bearbeitung Ihrer Anfrage).
+        </p>
+        <p>
+          <strong>WhatsApp:</strong> Wenn Sie uns über WhatsApp kontaktieren, gelten zusätzlich die
+          Datenschutzbestimmungen von WhatsApp Ireland Limited (Meta). Bitte berücksichtigen Sie,
+          dass dabei Daten an WhatsApp / Meta übermittelt werden. Die Nutzung von WhatsApp erfolgt
+          auf Ihre eigene Entscheidung. Alternativ erreichen Sie uns jederzeit per Telefon oder E-Mail.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Schriftarten (Fonts)</h2>
+        <p>
+          Diese Website verwendet die Schriften „Instrument Serif", „Manrope" und „JetBrains Mono".
+          Die Schriftdateien werden <strong>direkt von unserem Server ausgeliefert</strong> — es findet
+          <strong> kein Abruf von Google Fonts oder anderen Drittanbietern</strong> statt. Es werden
+          keine Daten an Google übertragen.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Cookies und Tracking</h2>
+        <p>
+          Diese Website verwendet <strong>keine Cookies, kein Analytics-Tracking, kein Social-Media-Plugin
+          und keine sonstigen Drittanbieter-Skripte</strong>, die personenbezogene Daten verarbeiten.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Ihre Rechte</h2>
+        <p>Sie haben jederzeit das Recht auf:</p>
+        <ul>
+          <li>Auskunft über die von uns verarbeiteten personenbezogenen Daten (Art. 15 DSGVO)</li>
+          <li>Berichtigung unrichtiger oder unvollständiger Daten (Art. 16 DSGVO)</li>
+          <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO)</li>
+          <li>Einschränkung der Datenverarbeitung (Art. 18 DSGVO)</li>
+          <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+          <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        </ul>
+        <p>
+          Für die Wahrnehmung Ihrer Rechte genügt eine formlose Mitteilung an die oben genannten
+          Kontaktdaten.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Beschwerderecht bei der Aufsichtsbehörde</h2>
+        <p>
+          Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer
+          personenbezogenen Daten zu beschweren. Zuständig ist für uns:
+        </p>
+        <p>
+          Sächsischer Datenschutzbeauftragter<br />
+          Devrientstraße 5<br />
+          01067 Dresden<br />
+          Web: <a href="https://www.saechsdsb.de/" rel="noopener" target="_blank">www.saechsdsb.de</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+        <p>
+          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand
+          <span class="todo">[BITTE ERGÄNZEN: Datum der Veröffentlichung, z.B. „Mai 2026"]</span>.
+          Durch die Weiterentwicklung der Website oder geänderter gesetzlicher Vorgaben kann eine
+          Anpassung notwendig werden. Die jeweils aktuelle Fassung ist auf dieser Seite abrufbar.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem clamp(1.25rem, 5vw, 3rem) 5rem;
+  }
+  .legal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 4rem; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .legal-brand {
+    display: inline-flex; align-items: center; gap: .65rem;
+    color: var(--ink); text-decoration: none;
+    font-weight: 600; letter-spacing: -0.01em;
+  }
+  .legal-brand .legal-mark {
+    width: 34px; height: 34px; color: var(--brand);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .legal-brand .legal-mark svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .legal-back {
+    color: var(--ink-soft); text-decoration: none; font-size: .92rem;
+    transition: color .2s;
+  }
+  .legal-back:hover { color: var(--ink); }
+
+  .legal-eyebrow { color: var(--muted); margin-bottom: 1rem; display: block; }
+  .legal-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+  }
+  .legal-note {
+    padding: 1.25rem 1.5rem;
+    background: color-mix(in oklab, var(--accent) 16%, var(--bg-warm));
+    border-left: 3px solid var(--brand);
+    border-radius: 8px;
+    color: var(--ink-soft);
+    margin-bottom: 3rem;
+  }
+  .legal-content section {
+    margin-bottom: 2.25rem;
+  }
+  .legal-content h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: .65rem;
+    color: var(--ink);
+  }
+  .legal-content p,
+  .legal-content ul {
+    color: var(--ink-soft);
+    margin-bottom: .85rem;
+    line-height: 1.65;
+  }
+  .legal-content ul {
+    padding-left: 1.5rem;
+  }
+  .legal-content li {
+    margin-bottom: .35rem;
+  }
+  .legal-content a {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal-content a:hover { color: var(--ink); }
+  .todo {
+    background: color-mix(in oklab, #d9a35a 30%, transparent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-style: italic;
+    color: var(--ink);
+  }
+</style>
