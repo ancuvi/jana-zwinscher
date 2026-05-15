@@ -1,35 +1,3 @@
-type WordSegment = { text: string; italic: boolean };
-
-const HEADLINE = 'Sauber gemacht.\nZuverlässig geräumt.';
-const ITALIC_RE = /geräumt|sauber|frei|hingabe/i;
-
-function renderHeroTitle(text: string) {
-  const el = document.getElementById('heroTitle');
-  if (!el) return;
-  el.innerHTML = '';
-  const lines = text.split('\n');
-  let delay = 0.05;
-  lines.forEach((line, li) => {
-    const words = line.split(' ');
-    words.forEach((w, wi) => {
-      const isLast = wi === words.length - 1;
-      const wrap = document.createElement('span');
-      wrap.className = 'word';
-      const inner = document.createElement('span');
-      inner.textContent = w;
-      inner.style.animationDelay = `${delay}s`;
-      if (li === 1 || ITALIC_RE.test(w)) {
-        inner.classList.add('italic');
-      }
-      wrap.appendChild(inner);
-      el.appendChild(wrap);
-      if (!isLast) el.appendChild(document.createTextNode(' '));
-      delay += 0.07;
-    });
-    if (li < lines.length - 1) el.appendChild(document.createElement('br'));
-  });
-}
-
 function initScrollProgress() {
   const progressEl = document.getElementById('scrollProgress');
   const topnav = document.getElementById('topnav');
@@ -164,7 +132,6 @@ function initBroomCursor() {
   broom.addEventListener('animationend', () => broom.classList.remove('sweeping'));
 }
 
-renderHeroTitle(HEADLINE);
 initScrollProgress();
 initReveals();
 initCursorGlow();

@@ -101,6 +101,17 @@ nav.top.scrolled { border-bottom-color: var(--line); padding-top: .7rem; padding
 
 @media (max-width: 760px) {
   .nav-links { display: none; }
+  nav.top { padding-left: 1rem; padding-right: 1rem; gap: .75rem; }
+  .brand { font-size: .98rem; gap: .55rem; min-width: 0; }
+  .brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .brand .sub { display: none; }
+  .nav-cta { padding: .5rem .9rem; font-size: .82rem; flex-shrink: 0; }
+  .nav-cta .dot { width: 5px; height: 5px; }
+}
+@media (max-width: 440px) {
+  /* Hide the brand text on very small screens — Z-mark + CTA is enough */
+  .brand-name { display: none; }
+  .nav-cta { padding: .55rem 1rem; font-size: .85rem; }
 }
 
 /* ============ HERO ============ */
@@ -127,11 +138,14 @@ nav.top.scrolled { border-bottom-color: var(--line); padding-top: .7rem; padding
 h1.hero-title {
   font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 400;
-  font-size: clamp(3.2rem, 8.5vw, 7.5rem);
+  font-size: clamp(2.5rem, 8.5vw, 7.5rem);
   line-height: .95;
   letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: 2rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 h1.hero-title .italic { font-style: italic; color: var(--brand); }
 h1.hero-title .word {

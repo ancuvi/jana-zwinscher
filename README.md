@@ -1,6 +1,6 @@
-# Jana Zwinscher — One-Pager
+# Jana Zwinzscher — One-Pager
 
-Statische One-Pager-Website für **Jana Zwinscher** (Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida + 50 km). Gebaut mit [Astro](https://astro.build) — der Build erzeugt reines HTML/CSS/JS ohne Framework-Runtime, damit die Seite überall blitzschnell lädt.
+Statische One-Pager-Website für **Jana Zwinzscher** (Entrümpelung, Haushaltsauflösung, Transporte & Endreinigung im Raum Mittweida + 50 km). Gebaut mit [Astro](https://astro.build) — der Build erzeugt reines HTML/CSS/JS ohne Framework-Runtime, damit die Seite überall blitzschnell lädt.
 
 ---
 
@@ -25,7 +25,7 @@ Alle Kontaktdaten und das Einzugsgebiet stehen zentral in [`src/site.config.ts`]
 phoneDisplay: '0171 6153591',       // Anzeige
 phoneHref:    '+491716153591',      // E.164 mit + für tel:-Link
 whatsappNumber: '491716153591',     // E.164 ohne + für wa.me/-Link
-email:        'jana_zwinscher@web.de',
+email:        'jana_zwinzscher@web.de',
 ```
 
 Außerdem:
@@ -57,7 +57,7 @@ Außerdem:
 
 ## Design
 
-- **Farbpalette:** Forest (Default) — Creme-Hintergrund, Waldgrün, Terracotta-Akzent. Drei Alternativen (`dusk`, `clay`, `ink`) sind als CSS-Tokens vorbereitet. Wechsel: `<html data-palette="dusk">` in `src/layouts/Layout.astro`.
+- **Farbpalette:** Brand (Default) — abgeleitet aus dem Logo: tiefes Teal (`#2f8a83`), helles Teal (`#4fc4b9`), warmes Schwarz (`#231f20`) auf Creme-Hintergrund. Eine Alternative `data-palette="dark"` ist als Mirror der Visitenkarten-Front als CSS-Tokens vorbereitet.
 - **Typografie:** Instrument Serif (Display, kursiv) · Manrope (Body) · JetBrains Mono (Mikro-Labels).
 - **Animationen:** Wort-für-Wort Hero-Reveal, Marquee, animierte Service-Region-Karte mit pulsierendem Mittweida-Punkt, Scroll-Reveals, Scroll-Progress-Bar, Cursor-Glow, schwebender "Profi vom Fach"-Stempel, 24h-Verfügbarkeits-Uhr.
 - **Reduced Motion:** Animationen werden bei `prefers-reduced-motion: reduce` deaktiviert.
@@ -78,4 +78,4 @@ Erste Ladegröße: ~48 KB (HTML+CSS+JS) plus die Google-Fonts.
 
 ## Lizenz
 
-Inhalte © Jana Zwinscher. Code unter Ihrer eigenen Lizenz veröffentlichen, falls Sie das Repo öffentlich machen.
+Inhalte © Jana Zwinzscher. Code unter Ihrer eigenen Lizenz veröffentlichen, falls Sie das Repo öffentlich machen.
