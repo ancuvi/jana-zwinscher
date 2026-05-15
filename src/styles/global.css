@@ -1,58 +1,34 @@
-:root {
-  /* Forest (default) */
+:root,
+[data-palette="brand"] {
+  /* Brand palette derived from the Z-mark logo:
+     deep teal #389C95, light teal #4FC4B9, ink #231F20.
+     Background stays warm off-cream so the teal feels alive, not clinical. */
   --bg: #f3ede1;
-  --bg-warm: #ece4d3;
-  --ink: #1a2420;
-  --ink-soft: #3a4540;
-  --muted: #8a857a;
-  --line: #d8cfbd;
-  --brand: #2a4a3a;
-  --brand-soft: #3d6450;
-  --accent: #b8634a;
-  --accent-soft: #d28a72;
+  --bg-warm: #ebe4d4;
+  --ink: #231f20;
+  --ink-soft: #44393b;
+  --muted: #8a847d;
+  --line: #d9d0bf;
+  --brand: #2f8a83;
+  --brand-soft: #389c95;
+  --accent: #4fc4b9;
+  --accent-soft: #7fd6cf;
   --white: #faf6ee;
 }
 
-[data-palette="dusk"] {
-  --bg: #ece6df;
-  --bg-warm: #e2dbd0;
-  --ink: #1d1a24;
-  --ink-soft: #3a3543;
-  --muted: #88837e;
-  --line: #d2c9bd;
-  --brand: #3b3157;
-  --brand-soft: #574a7a;
-  --accent: #c87a4e;
-  --accent-soft: #dfa078;
-  --white: #f6f1e8;
-}
-
-[data-palette="clay"] {
-  --bg: #f4ede3;
-  --bg-warm: #ebe2d3;
-  --ink: #221814;
-  --ink-soft: #45362e;
-  --muted: #8d7d70;
-  --line: #d9cbb8;
-  --brand: #8a3a26;
-  --brand-soft: #ab553e;
-  --accent: #2f5c4a;
-  --accent-soft: #4a7c66;
-  --white: #faf4e9;
-}
-
-[data-palette="ink"] {
-  --bg: #14130f;
-  --bg-warm: #1c1b16;
-  --ink: #f1ebdc;
-  --ink-soft: #c8c0ae;
+[data-palette="dark"] {
+  /* Mirror of the business-card front: dark canvas with teal energy. */
+  --bg: #14110f;
+  --bg-warm: #1d1816;
+  --ink: #f3ede1;
+  --ink-soft: #c8c0b1;
   --muted: #7a7466;
-  --line: #2e2c25;
-  --brand: #c8a36a;
-  --brand-soft: #d9b67e;
-  --accent: #d96d4d;
-  --accent-soft: #e58a6f;
-  --white: #1c1b16;
+  --line: #2c2724;
+  --brand: #4fc4b9;
+  --brand-soft: #6dcec5;
+  --accent: #a0d5d1;
+  --accent-soft: #d6efed;
+  --white: #1d1816;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,14 +61,15 @@ nav.top {
 }
 nav.top.scrolled { border-bottom-color: var(--line); padding-top: .7rem; padding-bottom: .7rem; }
 
-.brand { display: flex; align-items: baseline; gap: .55rem; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+.brand { display: flex; align-items: center; gap: .65rem; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
 .brand .mark {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 30px; height: 30px; border-radius: 50%;
-  background: var(--brand); color: var(--white);
-  font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem;
-  transform: translateY(2px);
+  width: 34px; height: 34px; flex-shrink: 0;
+  color: var(--brand);
+  transition: transform .4s cubic-bezier(.6,.05,.2,1), color .3s;
 }
+.brand .mark svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.brand:hover .mark { transform: rotate(-6deg) scale(1.08); color: var(--brand-soft); }
 .brand .sub { color: var(--muted); font-weight: 400; font-size: .85rem; }
 
 .nav-links { display: flex; gap: 2rem; align-items: center; }

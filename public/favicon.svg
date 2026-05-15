@@ -1,4 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="30" fill="#2a4a3a"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="36" fill="#faf6ee">J</text>
+  <rect width="64" height="64" rx="12" fill="#231F20"/>
+  <!-- Z-mark from brand logo, simplified for favicon scale -->
+  <g transform="translate(32 32) scale(0.27) translate(-156 -78)">
+    <!-- top-left accent parallelogram -->
+    <path fill="#4FC4B9" d="M76.13 0 L92.39 39.94 L122.85 39.92 L106.60 0 Z"/>
+    <!-- main Z body -->
+    <path fill="#389C95" d="M142.84 0 L222.99 32.14 L174.91 90.28 L222.99 155.81 L102.86 155.81 L89.78 123.67 L137.85 65.53 L114.11 0 Z"/>
+    <!-- bottom-right accent parallelogram -->
+    <path fill="#4FC4B9" d="M189.92 115.89 L206.16 155.81 L236.64 155.81 L220.38 115.87 Z"/>
+  </g>
 </svg>
